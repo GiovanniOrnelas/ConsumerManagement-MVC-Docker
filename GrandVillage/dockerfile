@@ -1,0 +1,23 @@
+# Build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
+# Copia o arquivo de projeto e restaura dependências
+COPY ["GrandVillage.csproj", "./"]
+RUN dotnet restore "./GrandVillage.csproj"
+
+# Copia todo o código para a pasta de build
+COPY . .
+RUN dotnet publish "./GrandVillage.csproj" -c Release -o /app
+
+# Etapa 2: Runtime
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+WORKDIR /app
+COPY --from=build /app .
+
+# Expõe as portas padrão do ASP.NET Core
+EXPOSE 8080
+EXPOSE 443
+
+# Comando para rodar o aplicativo
+ENTRYPOINT ["dotnet", "GrandVillage.dll"]

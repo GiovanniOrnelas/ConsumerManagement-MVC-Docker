@@ -1,0 +1,3 @@
+Comando para criar a imagem: docker build -t grandvillage:1.0 .
+
+Comando para executar o container baseado na imagem, especificando a porta de execução do programa: docker run -d -p 8080:8080 -p 8443:443 --name grandvillage-container grandvillage:1.0

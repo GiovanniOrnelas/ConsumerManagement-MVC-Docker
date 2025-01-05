@@ -1,0 +1,34 @@
+ 
+# .NET build folders
+bin/
+obj/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleasePublic/
+x64/
+x86/
+
+# Visual Studio config folder
+.vs/
+
+# .vscode folder
+.vscode/
+
+# ASP.NET temporary files
+*.[Cc]ache
+.ASP.NET/
+
+# Docker
+**/docker-compose.override.yml
+**/docker-compose.yml
+**/.docker/
+.dockerignore
