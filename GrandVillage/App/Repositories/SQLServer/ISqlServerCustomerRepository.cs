@@ -5,10 +5,10 @@ namespace GrandVillage.App.Repositories.SQLServer
 {
     public interface ISqlServerCustomerRepository
     {
-        public Result<object> Create(CustomerDto customerDto);
-        public Result<CustomerDto> Get(string? customerId = null, string? documentNumber = null);
-        public bool Update(CustomerDto customerDto);
+        public Result<object> CreateAsync(CustomerDto customerDto);
+        public Result<CustomerDto> GetAsync(string? customerId = null, string? documentNumber = null);
+        public bool UpdateAsync(CustomerDto customerDto);
 
-        public bool Delete(string customerId);
+        public bool DeleteAsync(string customerId);
     }
 }

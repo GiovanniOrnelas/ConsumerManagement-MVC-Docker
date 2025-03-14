@@ -23,7 +23,7 @@ namespace GrandVillage.App.Repositories.SQLServer
             return connection;
         }
 
-        public Result<object> Create(CustomerDto customerDto)
+        public Result<object> CreateAsync(CustomerDto customerDto)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace GrandVillage.App.Repositories.SQLServer
             }
         }
 
-        public Result<CustomerDto> Get(string? customerId = null, string? documentNumber = null)
+        public Result<CustomerDto> GetAsync(string? customerId = null, string? documentNumber = null)
         {
             try
             {
@@ -80,7 +80,7 @@ namespace GrandVillage.App.Repositories.SQLServer
             }
         }
 
-        public bool Update(CustomerDto customerDto)
+        public bool UpdateAsync(CustomerDto customerDto)
         {
             bool result = false;
             try
@@ -101,7 +101,7 @@ namespace GrandVillage.App.Repositories.SQLServer
             }
         }
 
-        public bool Delete(string customerId)
+        public bool DeleteAsync(string customerId)
         {
             bool result = false;
             try

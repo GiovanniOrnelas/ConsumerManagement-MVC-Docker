@@ -21,10 +21,7 @@ namespace GrandVillage.App.Infrastructure.DependencyResolver
             #endregion
 
             #region [ Services ]
-            serviceCollection.AddTransient<ICreateCustomerService, CreateCustomerService>();
-            serviceCollection.AddTransient<IGetCustomerService, GetCustomerService>();
-            serviceCollection.AddTransient<IUpdateCustomerService, UpdateCustomerService>();
-            serviceCollection.AddTransient<IDeleteCustomerService, DeleteCustomerService>();
+            serviceCollection.AddTransient<ICustomerService, CustomerService>();
             #endregion
 
             serviceCollection.AddControllers();
