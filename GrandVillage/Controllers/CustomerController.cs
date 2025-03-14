@@ -45,7 +45,6 @@ namespace GrandVillage.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
                 return StatusCode(500, new { error = ex.Message });
             }
         }
@@ -53,7 +52,6 @@ namespace GrandVillage.Controllers
         [HttpGet]
         public IActionResult Get([FromQuery] string customerId, [FromHeader(Name = "Authorization")] string authorizationHeader)
         {
-            _logger.LogInformation("teste de log");
             try
             {
                 if (authorizationHeader == _configuration["API_AUTHORIZATION"])
